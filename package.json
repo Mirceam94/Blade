@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "description": "",
+  "author": "Cris Mihalache <cris.mihalache@spectrumit.eu>",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-stylus": "~0.7.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-jade": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.2"
+  },
+  "private": true,
+  "engine": "node >= 0.10.12",
+
+  "asPHP": true,
+  "srcDir": "src",
+  "buildDir": "build",
+
+  "pages": [
+    "home"
+  ],
+
+  "uglifyCustom": [
+    "bower/jquery/jquery.min.js",
+    "bower/angular-unstable/angular.min.js"
+  ]
+}
