@@ -90,12 +90,12 @@ module.exports = (grunt) ->
     uglify:
       app:
         files: uglifyFiles
-    clean: [ buildDir ]
+    clean: [ pkg.buildDir ]
     connect:
       server:
         options:
           port: 8080
-          base: buildDir
+          base: pkg.buildDir
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-watch"
