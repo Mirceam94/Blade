@@ -90,6 +90,12 @@ module.exports = (grunt) ->
     uglify:
       app:
         files: uglifyFiles
+    clean: [ buildDir ]
+    connect:
+      server:
+        options:
+          port: 8080
+          base: buildDir
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -97,13 +103,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-stylus"
   grunt.loadNpmTasks "grunt-contrib-uglify"
-
-  grunt.registerTask "clean", "delete build directory", ->
-    done = this.async()
-    require("child_process").exec "rm #{pkg.buildDir}/* -rf", (err, stdout) ->
-      grunt.log.write stdout
-      done err
+  grunt.loadNpmTasks "grunt-contrib-connect"
+  grunt.loadNpmTasks "grunt-contrib-clean"
 
   # Perform a full build
   grunt.registerTask "full", ["clean", "copy", "coffee", "stylus", "jade", "uglify"]
   grunt.registerTask "default", ["coffee", "stylus", "jade", "uglify"]
+  grunt.registerTask "dev", ["connect", "watch"]

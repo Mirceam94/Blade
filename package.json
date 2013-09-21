@@ -11,19 +11,17 @@
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-jade": "~0.7.0",
-    "grunt-contrib-uglify": "~0.2.2"
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-connect": "~0.5.0"
   },
   "private": true,
   "engine": "node >= 0.10.12",
-
   "asPHP": true,
   "srcDir": "src",
   "buildDir": "build",
-
   "pages": [
     "home"
   ],
-
   "uglifyCustom": [
     "bower/jquery/jquery.min.js",
     "bower/angular-unstable/angular.min.js"
